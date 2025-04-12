@@ -1,0 +1,42 @@
+package chandlerhumor;
+import java.util.Random;
+public class Chandler {
+   private Humor humor;
+   private Random random;
+ 
+   public Chandler() {
+      
+       humor = new SarcasmHumor();
+       random = new Random();
+       startHumorLoop();
+   }
+  
+   private void startHumorLoop() {
+       new Thread(() -> {
+           try {
+               while (true) {
+                 
+                   int choice = random.nextInt(3);
+                   switch (choice) {
+                       case 0:
+                           humor = new SarcasmHumor();
+                           break;
+                       case 1:
+                           humor = new WitHumor();
+                           break;
+                       case 2:
+                           humor = new SelfDeprecationHumor();
+                           break;
+                   }
+                  
+                   humor.makeJoke();
+                  
+                  
+                   Thread.sleep(3000);
+               }
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+       }).start();
+   }
+}

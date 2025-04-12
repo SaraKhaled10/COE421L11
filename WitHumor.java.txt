@@ -1,0 +1,7 @@
+package chandlerhumor;
+public class WitHumor implements Humor {
+   @Override
+   public void makeJoke() {
+       System.out.println("Witty Chandler says: Could I BE any funnier?");
+   }
+}

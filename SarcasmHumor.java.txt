@@ -1,0 +1,7 @@
+package chandlerhumor;
+public class SarcasmHumor implements Humor {
+   @Override
+   public void makeJoke() {
+       System.out.println("Sarcastic Chandler says: I'm so glad we get to do this - it's the highlight of my day!");
+   }
+}
